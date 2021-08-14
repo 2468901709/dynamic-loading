@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">	
+			#main-loading{
+				width: 406px;
+				height: 606px;
+				position: absolute;
+				top: calc(50% - 303px);
+				left: calc(50% - 203px);
+			}
+			#main-loading rect{
+				fill: none;
+				stroke: brown;
+				stroke-width: 3;
+				stroke-dasharray: 2000;
+				stroke-dashoffset: 2000;
+				animation: loading 2s forwards,disappear 2s forwards 2s;
+			}
+			
+			@keyframes loading{
+				from{
+					stroke-dashoffset: 2000;
+				}
+				to{
+					stroke-dashoffset: 0;
+				}
+			}
+			@keyframes disappear{
+				0%{ stroke: brown;}
+				50%{ stroke: #FFFFFF;}
+				100%{ stroke: none;}
+			}
+			
+			.main{
+				position: absolute;
+				width: 400px; 
+				height: 600px;
+				top: calc(50% - 300px);
+				left: calc(50% - 200px);
+				animation: appear 2s forwards 2s;
+			}
+			
+			@keyframes appear{
+				from{
+					background-color: #FFFFFF;
+				}
+				to{
+					background-color: rgba(240,240,240);
+				}
+			}
+			
+			#img-loading{
+				position: absolute;
+				width: 206px;
+				height: 206px;
+				top: calc(30% - 103px);
+				left: calc(50% - 103px);
+			}
+			
+			#img-loading circle{
+				fill: none;
+				stroke: brown;
+				stroke-width: 3;
+				stroke-dasharray: 629; 
+				stroke-dashoffset: 629;
+				animation: loading2 2s forwards,disappear2 2s forwards 2s;
+				fill: none;
+			}
+			@keyframes loading2{
+				from{
+					stroke-dashoffset: 629;
+				}
+				to{
+					stroke-dashoffset: 0;
+				}
+			}	
+			@keyframes disappear2{
+				0%{ stroke: brown;}
+				100%{ stroke: rgba(240,240,240);}
+				/* 100%{ stroke: none;} */
+			}
+			
+			.img{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: calc(30% - 100px);
+				left: calc(50% - 100px);
+				border-radius: 50%;
+				background-image: url(lizhongshuo.jpg);
+				background-position: center;
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				animation: appear2 1s forwards 2s;
+				opacity: 0;
+			}
+			
+			@keyframes appear2{
+				0%{
+					top: 0;
+					opacity: 0;
+					
+				}
+				/* 50%{
+					top: calc(15% - 100px);
+					opacity: 0.5;
+				} */
+				100%{
+					top: calc(30% - 100px);
+					opacity: 1;
+				}
+			}
+			
+			.text-loading{
+				position: absolute;
+				width: 206px;
+				height: 206px;
+				top: 70%;
+				left: calc(50% - 100px);
+			}
+			.text-loading rect{
+				fill: none;
+				stroke: brown;
+				stroke-width: 3;
+				stroke-dasharray: 500; 
+				stroke-dashoffset: 500;
+				fill: none;
+				animation: loading3 2s forwards,disappear2 2s forwards 2s;
+			}
+			@keyframes loading3{
+				from{
+					stroke-dashoffset: 500;
+				}
+				to{
+					stroke-dashoffset: 0;
+				}
+			}
+			
+			.text{
+				width: 206px;
+				height: 56px;
+				font-size: 20px;
+				position: absolute;
+				left: calc(50% - 100px);
+				top: 70%;
+				text-align: center;
+				line-height: 56px;
+				opacity: 0;
+				animation: appear3 1s forwards 2s;
+			}
+			@keyframes appear3{
+				0%{
+					top: 0;
+					opacity: 0.5;
+					
+				}
+				/* 50%{
+					top: 35%;
+					opacity: 0.8;
+				} */
+				100%{
+					top: 70%;
+					opacity: 1;
+				}
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<svg id="main-loading">
+			<rect x="3" y="3" width="400" height="600"></rect>
+		</svg>
+		<div class="main">
+			<svg id="img-loading">
+				<circle cx="103" cy="103" r="100"></rect>
+			</svg>
+			<div class="img"></div>
+			<div class="text">李钟硕</div>
+			<svg class="text-loading">
+				<rect x="3" y="3" width="200" height="50"></rect>
+			</svg>
+		</div>
+	</body>
+</html>
+		
